@@ -36,7 +36,7 @@ class Point
         // Có tham số 
         Point(int, int);
         // Copy constructor -> khởi tạo 1 đối tượng từ 1 đối tượng tồn tại trước đó 
-        Point(const Point&);
+        // Point(const Point&);
 
         // Destructor -> Hàm hủy -> Tự động được gọi khi đối tượng được giải phóng -> giải phóng vùng nhớ cấp phát cho đối tượng
         // Khi cấp phát động cho đối tượng hoặc đối tượng có con trỏ.
@@ -47,7 +47,6 @@ class Point
         static void PrintCount();
 
         friend Point operator+(const Point&, const Point&);
-        // friend Point operator+(const Point&, const int&);
         Point operator-(const Point&);
 
         // Đa năng hóa toán tử đặc biệt
@@ -57,6 +56,11 @@ class Point
 
         // Hàm dựng để ép kiểu int về thành 1 đối tượng Point
         Point(int); 
+        //friend Point operator+(const Point&, const int&);
 
+        
+        Point& operator++();
+
+        const Point operator++(int);
 
 };

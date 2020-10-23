@@ -4,7 +4,6 @@ using namespace std;
 
 Number::Number(double x) : data(x)
 {
-
 }
 
 Number::~Number()
@@ -22,4 +21,3 @@ Number::operator double()
     return this->data;
 }
 
-// Chỉ được phép đa năng hóa bằng hàm thành viên của lớp và không có kiểu trả về

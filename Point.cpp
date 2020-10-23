@@ -47,12 +47,12 @@ Point::Point(int xVal, int yVal) //: m(2), xVal(xVal), yVal(yVal)
     this->yVal = yVal;
 }
 
-Point::Point(const Point& p) //: m(3), xVal(p.xVal), yVal(p.yVal)
-{
-    // Point::n++;
-    this->xVal = p.xVal;
-    this->yVal = p.yVal;
-}
+// Point::Point(const Point& p) //: m(3), xVal(p.xVal), yVal(p.yVal)
+// {
+//     // Point::n++;
+//     this->xVal = p.xVal;
+//     this->yVal = p.yVal;
+// }
 
 Point::~Point()
 {
@@ -65,12 +65,15 @@ Point::~Point()
 //     cout << p.xVal << ", " << p.yVal <<endl;
 // }
 
+// Đa năng hóa bằng hàm toàn cục
 Point operator+(const Point& p1,const Point& p2)
 {
     Point p(p1.xVal + p2.xVal, p1.yVal + p2.yVal);
     return p;
 }
 
+
+// Đa năng hóa bằng hàm thành viên của lớp
 Point Point::operator-(const Point& p2)
 {
     Point p(this->xVal - p2.xVal, this->yVal - p2.yVal);
@@ -94,6 +97,10 @@ istream& operator>>(istream& i, Point& p)
     return i;
 }
 
+Point::Point(int x) : xVal(x), yVal(x)
+{
+}
+
 
 // Point operator+(const Point& p1,const int& t)
 // {
@@ -101,10 +108,20 @@ istream& operator>>(istream& i, Point& p)
 //     return p;
 // }
 
-Point::Point(int x) : xVal(x), yVal(x)
+
+Point& Point::operator++()
 {
+    this->xVal++;
+    this->yVal++;
+    return (*this);
 }
 
-
-
+const Point Point::operator++(int)
+{
+    Point before = *this;
+    cout << before;
+    this->xVal++;
+    this->yVal++;
+    return before;
+}
 

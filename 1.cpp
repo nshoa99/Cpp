@@ -1,12 +1,13 @@
 #include "Vector.h"
 #include "Point.h"
-#include "Matrix.h"
+//#include "Matrix.h"
 #include "Number.h"
 #include <iostream>
 using namespace std;
 
 
-int main(){
+int main()
+{
     // Point p1;  // xVal = ?, yVal = ? 
     //// Ham dung -> Ham thanh vien của lớp --> Cung cấp hàm dựng mặc định do trình biên dịch định nghĩa
     // p1.Show(); // hàm dựng cho trình biên dịch cung cấp 
@@ -78,17 +79,31 @@ int main(){
 
     //// 16/10/20 
 
-    // // Ép kiểu int thành đối tượng Point để cộng 
-    // Point p1(1, 1);
-    // Point p2 = p1 + 1;
-    // cout << p2;
+    // Ép kiểu int thành đối tượng Point để cộng 
+    Point p1(1, 1);
+    Point p2 = 2 + p1;
+    cout << p2;
 
 
-    // Đa anwng hóa ép kiểu 
-    Number n = 3.4;
-    int x = int(n);
-    double y = double(n);
-    cout << "x = " << x << ", y = " << y << endl;
+    // Đa năng hóa ép kiểu 
+    // Number n = 3.4;
+    // int x = int(n);
+    // double y = double(n);
+    // cout << "x = " << x << ", y = " << y << endl;
+
+
+    // Vector v1(3, 1);
+    // Vector v2(v1);   // Phép dựng sao chép
+    // Vector v3 = v1;  // Phép dựng sao chép
+    // Vector v4(4, 4);
+    // v4 = v1;         // Phép gán
+
+
+    Point p1(1, 2);
+    //Point p2 = ++p1;
+    Point p3 = p1++;
+    cout << p1 << p3 ;
     
+
     return 0;
 }

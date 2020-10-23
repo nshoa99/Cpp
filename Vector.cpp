@@ -48,3 +48,29 @@ int& Vector::operator[](const int& index)
     static int error = -100;
     return (index >= 0 && index < this->size) ? *(this->data + index) : error;
 }
+
+Vector::Vector(const Vector& v)
+{
+    cout << "Copy" << endl; 
+    this->size = v.size;
+    this->data = new int[this->size];
+    for(int i = 0; i < v.size; ++i)
+    {
+        (*this)[i] = *(v.data + i);
+    }
+}
+
+const Vector& Vector::operator=(const Vector& v)
+{
+    cout << "=" << endl;
+    this->size = v.size;
+    this->data = new int[this->size];
+    for(int i = 0; i < v.size; ++i)
+    {
+        (*this)[i] = *(v.data + i);
+    }
+    return (*this);
+}
+
+
+
