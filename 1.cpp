@@ -1,10 +1,6 @@
-#include "Vector.h"
-#include "Point.h"
-//#include "Matrix.h"
-#include "Number.h"
 #include <iostream>
+#include "Point3D.h"
 using namespace std;
-
 
 int main()
 {
@@ -79,10 +75,10 @@ int main()
 
     //// 16/10/20 
 
-    // Ép kiểu int thành đối tượng Point để cộng 
-    Point p1(1, 1);
-    Point p2 = 2 + p1;
-    cout << p2;
+    // // Ép kiểu int thành đối tượng Point để cộng 
+    // Point p1(1, 1);
+    // Point p2 = 2 + p1;
+    // cout << p2;
 
 
     // Đa năng hóa ép kiểu 
@@ -99,10 +95,19 @@ int main()
     // v4 = v1;         // Phép gán
 
 
-    Point p1(1, 2);
-    //Point p2 = ++p1;
-    Point p3 = p1++;
-    cout << p1 << p3 ;
+    // Point p1(1, 2);
+    // //Point p2 = ++p1;
+    // Point p3 = p1++;
+    // cout << p1 << p3 ;
+
+
+
+    // Kế thừa và đa hình
+    Point3D p1(3, 4, 5);
+    Point p2(4, 5);
+    p1.Show();
+    p2.Show();
+    return 0;
     
 
     return 0;

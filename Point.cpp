@@ -1,4 +1,3 @@
-// Định nghĩa lớp -> định nghĩa hàm thành viên
 #include "Point.h"
 
 // int Point::n = 0; 
@@ -18,6 +17,13 @@
 //     this->xVal = new_xVal;
 // }
 
+Point::Point(int xVal, int yVal) : xVal(xVal), yVal(yVal)
+{
+    // Point::n++;
+    // this->xVal = xVal;
+    // this->yVal = yVal;
+}
+
 void Point::TT(int x)
 {
     this->xVal += x;
@@ -30,22 +36,17 @@ void Point::Show()
     cout << this->xVal << ", " << this->yVal << endl;
 }
 
-Point::Point() //: m(1), xVal(1), yVal(1)
-{   
-    // Point::n++;
-    // this->n++;      // Hạn chế dùng cách khai báo này 
-    // (*this).n++;    // Hạn chế dùng cách khai báo này
+// Point::Point() //: m(1), xVal(1), yVal(1)
+// {   
+//     // Point::n++;
+//     // this->n++;      // Hạn chế dùng cách khai báo này 
+//     // (*this).n++;    // Hạn chế dùng cách khai báo này
 
-    this->xVal = 2;
-    this->yVal = 2;
-}
+//     this->xVal = 2;
+//     this->yVal = 2;
+// }
 
-Point::Point(int xVal, int yVal) //: m(2), xVal(xVal), yVal(yVal)
-{
-    // Point::n++;
-    this->xVal = xVal;
-    this->yVal = yVal;
-}
+
 
 // Point::Point(const Point& p) //: m(3), xVal(p.xVal), yVal(p.yVal)
 // {
@@ -97,9 +98,9 @@ istream& operator>>(istream& i, Point& p)
     return i;
 }
 
-Point::Point(int x) : xVal(x), yVal(x)
-{
-}
+// Point::Point(int x) : xVal(x), yVal(x)
+// {
+// }
 
 
 // Point operator+(const Point& p1,const int& t)
@@ -119,7 +120,6 @@ Point& Point::operator++()
 const Point Point::operator++(int)
 {
     Point before = *this;
-    cout << before;
     this->xVal++;
     this->yVal++;
     return before;

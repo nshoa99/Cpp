@@ -6,7 +6,7 @@ class Point
 {   
         // Khai báo tập hợp tên thuộc tính của lớp
         // quyền truy cập, public, private, protected 
-    private: 
+    protected: 
         // const int m; 
         //// Point -> điểm trong hệ tọa độ Descartes -> tọa độ xVal, yVal 
         int xVal;
@@ -32,9 +32,9 @@ class Point
         // Tồn tại vô số hàm dựng -> 3 loại hàm dựng cơ bản - Nạp chồng phương thức 
         // Đa năng hóa hàm -> cách định nghĩa nhiều hàm cùng tên 
         // user defined 
-        Point();
+        //Point();
         // Có tham số 
-        Point(int, int);
+        Point(int = 1, int = 1);
         // Copy constructor -> khởi tạo 1 đối tượng từ 1 đối tượng tồn tại trước đó 
         // Point(const Point&);
 
@@ -55,7 +55,7 @@ class Point
 
 
         // Hàm dựng để ép kiểu int về thành 1 đối tượng Point
-        Point(int); 
+        // Point(int); 
         //friend Point operator+(const Point&, const int&);
 
         
